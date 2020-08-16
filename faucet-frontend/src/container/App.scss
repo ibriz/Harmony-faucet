@@ -8,13 +8,20 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0 100px;
   margin: auto;
   color: #1a295e;
+
+  @media(min-width: 992px) {
+    padding: 0 100px;
+  }
+
   .hm-header {
     height: 100px;
     display: flex;
     justify-content: flex-end;
+    @media(max-width: 576px) {
+      justify-content: space-between;
+    }
     .hm-logo {
       height: 100px;
       width: 200px;
@@ -26,6 +33,11 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 50px;
+
+    @media(max-width:576px) {
+      font-size: smaller;
+    }
+
     .header-text,
     .sub-header-text {
       text-align: center;
@@ -35,7 +47,7 @@
     .hm-form {
       display: flex;
       flex-direction: column;
-      padding: 0 20vw;
+      padding: 0 10vw;
       align-self: stretch;
       align-items: stretch;
       .input-wrapper {
@@ -43,12 +55,16 @@
         flex: 1;
         display: flex;
         padding: 3px;
+        height: 56px;
         border-radius: 29px;
         background: linear-gradient(
           90deg,
           rgba(95, 196, 216, 1) 0%,
           rgba(130, 232, 201, 1) 100%
         );
+        @media(max-width: 576px) {
+          height: 40px;
+        }
         &.error {
           background: red;
         }
@@ -59,9 +75,10 @@
         border-radius: 27px;
         font-size: 16px;
         font-weight: 300;
-        height: 56px;
+        height: 100%;
+        width: 100%;
         outline: none;
-        padding: 0 160px 0 23px;
+        padding: 0 120px 0 23px;
       }
       .send-me {
         align-items: center;
@@ -74,7 +91,7 @@
         border: 0;
         border-radius: 27px;
         color: #fff;
-        height: 56px;
+        height: 90%;
         position: absolute;
         right: 3px;
         top: 3px;
